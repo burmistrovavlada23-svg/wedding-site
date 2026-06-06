@@ -1,0 +1,508 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: #0a0806;
+  color: #2c2b28;
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+.container-luxury {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.luxury-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  text-align: center;
+  color: #d4af37;
+  letter-spacing: 4px;
+  margin-bottom: 2rem;
+}
+
+/* ========== КОНВЕРТ ========== */
+.envelope-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, #937769 0%, #0a0604 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  transition: opacity 1s ease, visibility 1s ease;
+}
+.envelope-screen.hide { opacity: 0; visibility: hidden; }
+.envelope-wrapper { text-align: center; cursor: pointer; }
+
+.luxury-envelope {
+  position: relative;
+  width: 360px;
+  height: 240px;
+  margin: 0 auto;
+  transition: transform 0.3s;
+}
+.luxury-envelope:hover { transform: scale(1.02); }
+
+.envelope-back-luxury {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 190px;
+  background: linear-gradient(145deg, #f8edd8, #eadbc4);
+  border-radius: 12px;
+  box-shadow: 0 20px 30px rgba(0,0,0,0.4);
+  border: 1px solid rgba(212,175,55,0.5);
+}
+
+.envelope-flap-luxury {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  background: linear-gradient(145deg, #f8edd8, #f3e3ce);
+  clip-path: polygon(0% 0%, 100% 0%, 50% 55%);
+  transform-origin: top;
+  transition: transform 0.6s cubic-bezier(0.4,0,0.2,1);
+  z-index: 2;
+  border-radius: 12px 12px 0 0;
+  border: 1px solid rgba(212,175,55,0.4);
+}
+.luxury-envelope.open .envelope-flap-luxury { transform: rotateX(180deg); }
+
+.gold-border-luxury {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  right: 12px;
+  bottom: 12px;
+  border: 1px solid #d4af37;
+  border-radius: 8px;
+  z-index: 3;
+  box-shadow: 0 0 8px rgba(212,175,55,0.3);
+}
+
+.gold-ornament {
+  position: absolute;
+  background: rgba(212,175,55,0.2);
+  z-index: 3;
+}
+.top-luxury-ornament {
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 30px;
+  background: repeating-linear-gradient(90deg, transparent 12px, #d4af37 12px, #d4af37 18px);
+  border-radius: 50%;
+}
+.bottom-luxury-ornament {
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 130px;
+  height: 24px;
+  background: repeating-linear-gradient(90deg, transparent 10px, #d4af37 10px, #d4af37 14px);
+  border-radius: 50%;
+}
+
+.luxury-envelope::before {
+  content: "✦";
+  position: absolute;
+  top: 18px;
+  left: 20px;
+  font-size: 18px;
+  color: #d4af37;
+  opacity: 0.7;
+  z-index: 3;
+}
+.luxury-envelope::after {
+  content: "✦";
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  font-size: 18px;
+  color: #d4af37;
+  opacity: 0.7;
+  z-index: 3;
+}
+
+.envelope-center-text-luxury {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  text-align: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem;
+  color: #a0522d;
+  font-weight: 600;
+  background: rgba(255, 245, 235, 0.85);
+  width: fit-content;
+  margin: 0 auto;
+  padding: 5px 14px;
+  border-radius: 40px;
+  backdrop-filter: blur(2px);
+  z-index: 3;
+}
+
+.wax-seal-luxury {
+  position: absolute;
+  bottom: -22px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 50px;
+  background: radial-gradient(circle at 30% 30%, #c62828, #7a0000);
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3), inset 0 1px 3px rgba(255,255,255,0.3);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s;
+}
+.wax-seal-inner-luxury {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #e53935, #9a0000);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255,215,0,0.6);
+}
+.wax-initials-luxury {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.95rem;
+  font-weight: bold;
+  color: #ffd966;
+}
+.luxury-envelope.open .wax-seal-luxury { opacity: 0; }
+
+.envelope-text-luxury {
+  margin-top: 40px;
+  color: #d4af37;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 2px;
+  font-size: 0.75rem;
+  white-space: nowrap;
+}
+
+/* ========== ОСНОВНОЙ КОНТЕНТ ========== */
+.main-content {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1s ease 0.3s;
+}
+.main-content.visible { opacity: 1; visibility: visible; }
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.fade-up.visible { opacity: 1; transform: translateY(0); }
+
+/* ========== HERO ========== */
+.hero-luxury {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 60px 20px;
+  overflow: hidden;
+}
+.hero-bg-luxury {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('wedding-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+}
+.hero-overlay-luxury {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 1;
+}
+.hero-content-luxury {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 700px;
+}
+
+.luxury-suptitle {
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 4px;
+  font-size: 1rem;
+  color: #d4af37;
+  margin-bottom: 20px;
+}
+
+/* СЛАЙДЕР */
+.photo-slider-container {
+  width: 90%;
+  max-width: 500px;
+  height: 60vh;
+  max-height: 550px;
+  margin: 20px auto;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid #d4af37;
+  box-shadow: 0 25px 40px rgba(0,0,0,0.4);
+  background: #1a1a1a;
+}
+
+.photo-swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.photo-swiper .swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiper-pagination-bullet-active {
+  background: #d4af37 !important;
+}
+
+/* ИМЕНА */
+.names-luxury {
+  margin: 20px 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+.name-bride-luxury, .name-groom-luxury {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: white;
+  display: inline-block;
+}
+.gold-heart {
+  font-size: 2rem;
+  color: #d4af37;
+  display: inline-block;
+}
+
+/* ДАТА */
+.wedding-date-luxury {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.8rem;
+  letter-spacing: 4px;
+  color: #d4af37;
+  border-top: 1px solid rgba(255,255,255,0.3);
+  display: inline-block;
+  padding-top: 12px;
+}
+
+/* ========== ТАЙМЕР ========== */
+.timer-luxury-section {
+  background: white;
+  padding: 60px 0;
+  text-align: center;
+}
+
+.timer-luxury {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: nowrap;
+  padding: 10px 5px;
+}
+
+.timer-block-luxury {
+  background: #fef9f0;
+  padding: 15px 12px;
+  border-radius: 20px;
+  min-width: 75px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  border: 1px solid #d4af37;
+  flex-shrink: 0;
+}
+
+.timer-block-luxury span:first-child {
+  font-size: 1.8rem;
+  font-weight: 700;
+  display: block;
+  font-family: 'Playfair Display', serif;
+  color: #8b4513;
+}
+
+.timer-block-luxury span:last-child {
+  font-size: 0.7rem;
+  color: #888;
+  display: block;
+}
+
+/* ========== ИСТОРИЯ ========== */
+.story-luxury {
+  background: #fef9f0;
+  padding: 70px 0;
+}
+.story-card-luxury {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+  background: white;
+  padding: 40px;
+  border-radius: 30px;
+  box-shadow: 0 20px 35px rgba(0,0,0,0.05);
+}
+.story-icon {
+  font-size: 1.5rem;
+  color: #d4af37;
+  margin: 10px 0;
+}
+.story-card-luxury p {
+  font-size: 1.5rem;
+  line-height: 1.7;
+  font-family: 'Cormorant Garamond', serif;
+  color: #3e3a35;
+  margin-bottom: 20px;
+}
+
+.handwritten-text {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.2rem;
+  color: #8b4513;
+  margin: 30px auto 15px;
+  line-height: 1.3;
+  font-weight: normal;
+  letter-spacing: 1px;
+}
+
+/* ========== ЛОКАЦИЯ ========== */
+.location-luxury {
+  background: linear-gradient(135deg, #fef9f0, #fff5e8);
+  padding: 70px 0;
+}
+.venue-card-luxury {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  align-items: center;
+  background: white;
+  border-radius: 35px;
+  padding: 35px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+}
+.venue-info-luxury { flex: 1; text-align: center; min-width: 250px; }
+.venue-icon-luxury { font-size: 2.5rem; margin-bottom: 10px; }
+.venue-name-luxury { font-size: 1.8rem; color: #8b4513; margin-bottom: 10px; }
+.venue-description-luxury { color: #6b6b6b; margin-bottom: 20px; }
+.gathering-time-luxury {
+  display: inline-flex;
+  gap: 12px;
+  background: #fef9f0;
+  border: 2px solid #d4af37;
+  border-radius: 60px;
+  padding: 8px 22px;
+  margin: 15px auto;
+}
+.show-map-btn-luxury {
+  background: #d4af37;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 0.9rem;
+}
+.show-map-btn-luxury:hover { background: #c4a12e; transform: scale(1.02); }
+.venue-photo-luxury { flex: 1; min-width: 250px; border-radius: 25px; overflow: hidden; }
+.venue-photo-luxury img { width: 100%; height: 250px; object-fit: cover; transition: 0.3s; }
+.venue-photo-luxury img:hover { transform: scale(1.02); }
+.map-note-luxury { text-align: center; font-size: 0.85rem; color: #8b7a6b; margin-top: 20px; }
+
+.footer-luxury {
+  background: #0a0806;
+  color: #d4af37;
+  text-align: center;
+  padding: 30px;
+  font-size: 0.85rem;
+}
+.footer-diamonds { letter-spacing: 5px; margin-top: 10px; font-size: 0.7rem; }
+
+/* ========== АДАПТАЦИЯ ДЛЯ ТЕЛЕФОНОВ ========== */
+@media (max-width: 768px) {
+  .luxury-title { font-size: 1.8rem; }
+  .luxury-suptitle { font-size: 0.85rem; }
+  .wedding-date-luxury { font-size: 1.3rem; }
+  .name-bride-luxury, .name-groom-luxury { font-size: 2rem; }
+  .gold-heart { font-size: 1.6rem; }
+  
+  .timer-luxury {
+    gap: 8px;
+  }
+  .timer-block-luxury {
+    min-width: 65px;
+    padding: 10px 8px;
+  }
+  .timer-block-luxury span:first-child {
+    font-size: 1.4rem;
+  }
+  .timer-block-luxury span:last-child {
+    font-size: 0.6rem;
+  }
+  
+  .photo-slider-container {
+    width: 95%;
+    height: 50vh;
+    max-height: 450px;
+  }
+  
+  .story-card-luxury p {
+    font-size: 1.2rem;
+  }
+  .handwritten-text {
+    font-size: 1.8rem;
+  }
+  .story-card-luxury {
+    padding: 25px;
+  }
+  
+  .venue-card-luxury { flex-direction: column; padding: 25px; }
+  .envelope-text-luxury { font-size: 0.55rem; white-space: nowrap; }
+  .luxury-envelope { width: 280px; height: 200px; }
+  .envelope-back-luxury { height: 160px; }
+  .envelope-flap-luxury { height: 100px; }
+  .envelope-center-text-luxury { font-size: 0.8rem; }
+}
+
+@media (max-width: 480px) {
+  .handwritten-text { font-size: 1.4rem; }
+  .photo-slider-container { height: 45vh; }
+  .story-card-luxury p { font-size: 1rem; }
+  .envelope-center-text-luxury { font-size: 0.7rem; padding: 3px 8px; }
+}
