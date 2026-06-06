@@ -47,4 +47,4 @@ document.getElementById('showMapBtn')?.addEventListener('click', () => {
   const mapDiv = document.getElementById('venue-map-luxury');
   if(mapDiv) { mapDiv.style.display = 'block'; mapDiv.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
 });
-console.log('💍 Люкс-сайт готов');
+console.log('💍 Сайт готов! Свадьба 26.06.2026');
