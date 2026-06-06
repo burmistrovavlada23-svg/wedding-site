@@ -324,7 +324,7 @@ body {
   padding-top: 12px;
 }
 
-/* ========== ТАЙМЕР ========== */
+/* ========== ТАЙМЕР — ИСПРАВЛЕННЫЙ ========== */
 .timer-luxury-section {
   background: white;
   padding: 60px 0;
@@ -335,7 +335,7 @@ body {
   display: flex;
   justify-content: center;
   gap: 15px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   padding: 10px 5px;
 }
 
@@ -463,8 +463,6 @@ body {
   .gold-heart { font-size: 1.6rem; }
   
   .timer-luxury {
-    justify-content: center;
-    flex-wrap: wrap;
     gap: 8px;
   }
   .timer-block-luxury {
