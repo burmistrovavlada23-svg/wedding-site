@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Ирина & Денис | Люкс-приглашение</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600&family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+</head>
+<body>
+
+  <!-- КОНВЕРТ -->
+  <div class="envelope-screen" id="envelopeScreen">
+    <div class="envelope-wrapper" id="envelopeWrapper">
+      <div class="luxury-envelope" id="vintageEnvelope">
+        <div class="envelope-back-luxury"></div>
+        <div class="envelope-flap-luxury"></div>
+        <div class="gold-ornament top-luxury-ornament"></div>
+        <div class="gold-ornament bottom-luxury-ornament"></div>
+        <div class="gold-border-luxury"></div>
+        <div class="envelope-center-text-luxury">Для наших дорогих гостей</div>
+        <div class="wax-seal-luxury">
+          <div class="wax-seal-inner-luxury">
+            <span class="wax-initials-luxury">И&Д</span>
+          </div>
+        </div>
+      </div>
+      <p class="envelope-text-luxury">✧ НАЖМИТЕ НА КОНВЕРТ ✧</p>
+    </div>
+  </div>
+
+  <!-- ОСНОВНОЙ КОНТЕНТ -->
+  <div class="main-content" id="mainContent">
+
+    <!-- HERO С ФОНОМ И ПРЯМОУГОЛЬНЫМ СЛАЙДЕРОМ -->
+    <section class="hero-luxury">
+      <div class="hero-bg-luxury"></div>
+      <div class="hero-overlay-luxury"></div>
+      
+      <div class="hero-content-luxury">
+        <div class="luxury-suptitle">ПРИГЛАШЕНИЕ НА СВАДЬБУ</div>
+        
+        <!-- ПРЯМОУГОЛЬНЫЙ СЛАЙДЕР НА 2 ФОТО -->
+        <div class="photo-slider-container">
+          <div class="swiper photo-swiper" id="photoSwiper">
+            <div class="swiper-wrapper">
+              <!-- ЗАМЕНИТЕ НАЗВАНИЯ ФАЙЛОВ НА ВАШИ -->
+              <div class="swiper-slide"><img src="ira.jpg" alt="Ирина"></div>
+              <div class="swiper-slide"><img src="denis.jpg" alt="Денис"></div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+        
+        <div class="names-luxury">
+          <span class="name-bride-luxury">Ирина</span>
+          <span class="amp-luxury">&#10086;</span>
+          <span class="name-groom-luxury">Денис</span>
+        </div>
+        
+        <div class="wedding-date-luxury">26.06.2026</div>
+      </div>
+    </section>
+
+    <!-- ТАЙМЕР -->
+    <section class="timer-luxury-section">
+      <div class="container-luxury">
+        <h2 class="luxury-title">До нашей свадьбы</h2>
+        <div class="timer-luxury" id="timer">
+          <div class="timer-block-luxury"><span id="days">00</span><span>дней</span></div>
+          <div class="timer-block-luxury"><span id="hours">00</span><span>часов</span></div>
+          <div class="timer-block-luxury"><span id="minutes">00</span><span>минут</span></div>
+          <div class="timer-block-luxury"><span id="seconds">00</span><span>секунд</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ИСТОРИЯ С РУКОПИСНЫМ ТЕКСТОМ -->
+    <section class="story-luxury">
+      <div class="container-luxury">
+        <div class="story-card-luxury">
+          <div class="story-icon">✦</div>
+          <p>Этот день станет для нас началом новой истории — истории нашей семьи.</p>
+          <p>Мы очень хотим, чтобы он прошёл в окружении родных и близких людей, с которыми связаны важные воспоминания, тёплые моменты и счастливые события нашей жизни.</p>
+          <p>Нам хочется создать атмосферу настоящего праздника любви, где будет много улыбок, объятий, душевных разговоров и ярких эмоций.</p>
+          
+          <div class="handwritten-text">Мы будем искренне счастливы разделить этот важный для нас день с вами.</div>
+          
+          <div class="story-icon">✦</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ЛОКАЦИЯ -->
+    <section class="location-luxury">
+      <div class="container-luxury">
+        <h2 class="luxury-title">Локация</h2>
+        <div class="venue-card-luxury">
+          <div class="venue-info-luxury">
+            <div class="venue-icon-luxury">🏰</div>
+            <h3 class="venue-name-luxury">Дворец бракосочетания №4</h3>
+            <p class="venue-description-luxury">Историческая усадьба в центре Москвы</p>
+            
+            <div class="gathering-time-luxury">
+              <span>⏰</span>
+              <span>Сбор гостей <strong>17:00</strong></span>
+            </div>
+            
+            <button class="show-map-btn-luxury" id="showMapBtn">📍 Показать на карте</button>
+          </div>
+          <div class="venue-photo-luxury">
+            <img src="venue-photo.jpg" alt="Дворец">
+          </div>
+        </div>
+        <div id="venue-map-luxury" style="width: 100%; height: 350px; border-radius: 24px; margin-top: 30px; display: none;">
+          <iframe src="https://yandex.ru/map-widget/v1/?ll=37.5880,55.8015&z=16&pt=37.5880,55.8015" width="100%" height="100%" frameborder="0"></iframe>
+        </div>
+        <p class="map-note-luxury">Бутырская улица, 17, Москва</p>
+      </div>
+    </section>
+
+    <footer class="footer-luxury">
+      <div class="container-luxury">
+        <p>С любовью, Ирина и Денис</p>
+        <div class="footer-diamonds">✦ ✦ ✦</div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    const photoSwiper = new Swiper('.photo-swiper', {
+      loop: true,
+      autoplay: { delay: 3500, disableOnInteraction: false },
+      pagination: { el: '.swiper-pagination', clickable: true },
+      effect: 'slide',
+      speed: 600,
+    });
+  </script>
+</body>
+</html>
