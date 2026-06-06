@@ -384,7 +384,7 @@ body {
   margin: 10px 0;
 }
 .story-card-luxury p {
-  font-size: 1.5rem;
+  font-size: 2rem;
   line-height: 1.7;
   font-family: 'Cormorant Garamond', serif;
   color: #3e3a35;
@@ -497,12 +497,12 @@ body {
   .luxury-envelope { width: 280px; height: 200px; }
   .envelope-back-luxury { height: 160px; }
   .envelope-flap-luxury { height: 100px; }
-  .envelope-center-text-luxury { font-size: 0.8rem; }
+  .envelope-center-text-luxury { font-size: 1rem; }
 }
 
 @media (max-width: 480px) {
   .handwritten-text { font-size: 1.4rem; }
   .photo-slider-container { height: 45vh; }
   .story-card-luxury p { font-size: 1rem; }
-  .envelope-center-text-luxury { font-size: 0.7rem; padding: 3px 8px; }
+  .envelope-center-text-luxury { font-size: 1rem; padding: 3px 8px; }
 }
