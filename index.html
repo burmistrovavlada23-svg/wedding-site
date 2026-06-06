@@ -34,7 +34,7 @@
   <!-- ОСНОВНОЙ КОНТЕНТ -->
   <div class="main-content" id="mainContent">
 
-    <!-- HERO С ФОНОМ И ПРЯМОУГОЛЬНЫМ СЛАЙДЕРОМ -->
+    <!-- HERO С ФОНОМ И БОЛЬШИМ СЛАЙДЕРОМ -->
     <section class="hero-luxury">
       <div class="hero-bg-luxury"></div>
       <div class="hero-overlay-luxury"></div>
@@ -42,21 +42,21 @@
       <div class="hero-content-luxury">
         <div class="luxury-suptitle">ПРИГЛАШЕНИЕ НА СВАДЬБУ</div>
         
-        <!-- ПРЯМОУГОЛЬНЫЙ СЛАЙДЕР НА 2 ФОТО -->
         <div class="photo-slider-container">
           <div class="swiper photo-swiper" id="photoSwiper">
             <div class="swiper-wrapper">
-              <!-- ЗАМЕНИТЕ НАЗВАНИЯ ФАЙЛОВ НА ВАШИ -->
               <div class="swiper-slide"><img src="ira.jpg" alt="Ирина"></div>
               <div class="swiper-slide"><img src="denis.jpg" alt="Денис"></div>
             </div>
             <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
           </div>
         </div>
         
         <div class="names-luxury">
           <span class="name-bride-luxury">Ирина</span>
-          <span class="amp-luxury">&#10086;</span>
+          <span class="gold-heart">❤️</span>
           <span class="name-groom-luxury">Денис</span>
         </div>
         
@@ -77,14 +77,14 @@
       </div>
     </section>
 
-    <!-- ИСТОРИЯ С РУКОПИСНЫМ ТЕКСТОМ -->
+    <!-- ИСТОРИЯ С УВЕЛИЧЕННЫМ ТЕКСТОМ -->
     <section class="story-luxury">
       <div class="container-luxury">
         <div class="story-card-luxury">
           <div class="story-icon">✦</div>
-          <p>Этот день станет для нас началом новой истории — истории нашей семьи.</p>
-          <p>Мы очень хотим, чтобы он прошёл в окружении родных и близких людей, с которыми связаны важные воспоминания, тёплые моменты и счастливые события нашей жизни.</p>
-          <p>Нам хочется создать атмосферу настоящего праздника любви, где будет много улыбок, объятий, душевных разговоров и ярких эмоций.</p>
+          <p class="story-paragraph">Этот день станет для нас началом новой истории — истории нашей семьи.</p>
+          <p class="story-paragraph">Мы очень хотим, чтобы он прошёл в окружении родных и близких людей, с которыми связаны важные воспоминания, тёплые моменты и счастливые события нашей жизни.</p>
+          <p class="story-paragraph">Нам хочется создать атмосферу настоящего праздника любви, где будет много улыбок, объятий, душевных разговоров и ярких эмоций.</p>
           
           <div class="handwritten-text">Мы будем искренне счастливы разделить этот важный для нас день с вами.</div>
           
@@ -135,6 +135,10 @@
       loop: true,
       autoplay: { delay: 3500, disableOnInteraction: false },
       pagination: { el: '.swiper-pagination', clickable: true },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
       effect: 'slide',
       speed: 600,
     });
