@@ -326,7 +326,7 @@ body {
   padding-top: 12px;
 }
 
-/* ========== ТАЙМЕР ПО ЦЕНТРУ ========== */
+/* ========== ТАЙМЕР — УВЕЛИЧЕННЫЙ ========== */
 .timer-luxury-section {
   background: white;
   padding: 60px 0;
@@ -336,16 +336,16 @@ body {
 .timer-luxury {
   display: flex;
   justify-content: center;
-  gap: 15px;
+  gap: 20px;
   flex-wrap: wrap;
   padding: 10px 5px;
 }
 
 .timer-block-luxury {
   background: #fef9f0;
-  padding: 15px 12px;
+  padding: 20px 18px;
   border-radius: 20px;
-  min-width: 75px;
+  min-width: 95px;
   text-align: center;
   box-shadow: 0 5px 15px rgba(0,0,0,0.05);
   border: 1px solid #d4af37;
@@ -353,7 +353,7 @@ body {
 }
 
 .timer-block-luxury span:first-child {
-  font-size: 1.8rem;
+  font-size: 2.2rem;
   font-weight: 700;
   display: block;
   font-family: 'Playfair Display', serif;
@@ -361,7 +361,7 @@ body {
 }
 
 .timer-block-luxury span:last-child {
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   color: #888;
   display: block;
 }
@@ -467,17 +467,17 @@ body {
   .timer-luxury {
     justify-content: center;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 12px;
   }
   .timer-block-luxury {
-    min-width: 65px;
-    padding: 10px 8px;
+    min-width: 75px;
+    padding: 12px 10px;
   }
   .timer-block-luxury span:first-child {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
   }
   .timer-block-luxury span:last-child {
-    font-size: 0.6rem;
+    font-size: 0.65rem;
   }
   
   .photo-slider-container {
