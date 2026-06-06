@@ -487,7 +487,7 @@ body {
   .luxury-envelope { width: 280px; height: 200px; }
   .envelope-back-luxury { height: 160px; }
   .envelope-flap-luxury { height: 100px; }
-  .envelope-center-text-luxury { font-size: 0.8rem; }
+  .envelope-center-text-luxury { font-size: 1.2rem; }
 }
 
 @media (max-width: 480px) {
