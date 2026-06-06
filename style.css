@@ -87,15 +87,15 @@ body {
   left: 12px;
   right: 12px;
   bottom: 12px;
-  border: 2px solid #d4af37;
+  border: 1px solid #d4af37;
   border-radius: 8px;
   z-index: 3;
-  box-shadow: 0 0 10px rgba(212,175,55,0.4);
+  box-shadow: 0 0 8px rgba(212,175,55,0.3);
 }
 
 .gold-ornament {
   position: absolute;
-  background: rgba(212,175,55,0.25);
+  background: rgba(212,175,55,0.2);
   z-index: 3;
 }
 .top-luxury-ornament {
@@ -216,7 +216,7 @@ body {
 }
 .fade-up.visible { opacity: 1; transform: translateY(0); }
 
-/* ========== HERO С ФОНОМ И СЛАЙДЕРОМ ========== */
+/* ========== HERO ========== */
 .hero-luxury {
   min-height: 100vh;
   position: relative;
@@ -262,15 +262,17 @@ body {
   margin-bottom: 20px;
 }
 
-/* ПРЯМОУГОЛЬНЫЙ СЛАЙДЕР */
+/* СЛАЙДЕР */
 .photo-slider-container {
-  width: 360px;
-  height: 450px;
+  width: 90%;
+  max-width: 500px;
+  height: 60vh;
+  max-height: 550px;
   margin: 20px auto;
   border-radius: 24px;
   overflow: hidden;
-  border: 3px solid #d4af37;
-  box-shadow: 0 20px 30px rgba(0,0,0,0.3);
+  border: 1px solid #d4af37;
+  box-shadow: 0 25px 40px rgba(0,0,0,0.4);
   background: #1a1a1a;
 }
 
@@ -289,16 +291,27 @@ body {
   background: #d4af37 !important;
 }
 
-/* Адаптация для телефонов */
-@media (max-width: 768px) {
-  .photo-slider-container {
-    width: 280px;
-    height: 350px;
-  }
+.swiper-button-prev,
+.swiper-button-next {
+  color: #d4af37 !important;
+  background: rgba(0,0,0,0.4);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.swiper-button-prev:after,
+.swiper-button-next:after {
+  font-size: 20px;
 }
 
+/* ИМЕНА */
 .names-luxury {
   margin: 20px 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
 }
 .name-bride-luxury, .name-groom-luxury {
   font-family: 'Playfair Display', serif;
@@ -307,10 +320,10 @@ body {
   color: white;
   display: inline-block;
 }
-.amp-luxury {
+.gold-heart {
   font-size: 2rem;
-  margin: 0 15px;
   color: #d4af37;
+  display: inline-block;
 }
 .wedding-date-luxury {
   font-family: 'Cormorant Garamond', serif;
@@ -322,39 +335,48 @@ body {
   padding-top: 12px;
 }
 
-/* ТАЙМЕР */
+/* ========== ТАЙМЕР — В ОДНУ СТРОКУ ========== */
 .timer-luxury-section {
   background: white;
   padding: 60px 0;
   text-align: center;
 }
+
 .timer-luxury {
   display: flex;
   justify-content: center;
-  gap: 25px;
-  flex-wrap: wrap;
+  gap: 15px;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding: 10px 5px;
 }
+
 .timer-block-luxury {
   background: #fef9f0;
-  padding: 18px;
+  padding: 15px 12px;
   border-radius: 20px;
-  min-width: 90px;
+  min-width: 75px;
+  text-align: center;
   box-shadow: 0 5px 15px rgba(0,0,0,0.05);
   border: 1px solid #d4af37;
+  flex-shrink: 0;
 }
+
 .timer-block-luxury span:first-child {
-  font-size: 2.2rem;
+  font-size: 1.8rem;
   font-weight: 700;
   display: block;
   font-family: 'Playfair Display', serif;
   color: #8b4513;
 }
+
 .timer-block-luxury span:last-child {
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   color: #888;
+  display: block;
 }
 
-/* ИСТОРИЯ */
+/* ========== ИСТОРИЯ ========== */
 .story-luxury {
   background: #fef9f0;
   padding: 70px 0;
@@ -374,25 +396,24 @@ body {
   margin: 10px 0;
 }
 .story-card-luxury p {
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   line-height: 1.7;
   font-family: 'Cormorant Garamond', serif;
   color: #3e3a35;
-  margin-bottom: 18px;
+  margin-bottom: 20px;
 }
 
-/* РУКОПИСНЫЙ ТЕКСТ — МЕНЬШЕ, ИЗЯЩНЫЙ */
 .handwritten-text {
   font-family: 'Great Vibes', cursive;
-  font-size: 1.5rem;
+  font-size: 2rem;
   color: #8b4513;
-  margin: 25px auto 10px;
+  margin: 30px auto 15px;
   line-height: 1.3;
   font-weight: normal;
   letter-spacing: 1px;
 }
 
-/* ЛОКАЦИЯ */
+/* ========== ЛОКАЦИЯ ========== */
 .location-luxury {
   background: linear-gradient(135deg, #fef9f0, #fff5e8);
   padding: 70px 0;
@@ -445,24 +466,60 @@ body {
 }
 .footer-diamonds { letter-spacing: 5px; margin-top: 10px; font-size: 0.7rem; }
 
-/* АДАПТАЦИЯ ДЛЯ ТЕЛЕФОНА */
+/* ========== АДАПТАЦИЯ ДЛЯ ТЕЛЕФОНОВ ========== */
 @media (max-width: 768px) {
   .luxury-title { font-size: 1.8rem; }
-  .name-bride-luxury, .name-groom-luxury { font-size: 1.8rem; }
-  .amp-luxury { font-size: 1.4rem; margin: 0 10px; }
-  .timer-block-luxury { min-width: 70px; padding: 12px; }
-  .timer-block-luxury span:first-child { font-size: 1.6rem; }
-  .photo-slider-container { width: 200px; height: 200px; }
-  .handwritten-text { font-size: 1.2rem; }
-  .story-card-luxury p { font-size: 1rem; }
+  .name-bride-luxury, .name-groom-luxury { font-size: 2rem; }
+  .gold-heart { font-size: 1.6rem; }
+  .wedding-date-luxury { font-size: 1.1rem; }
+  
+  /* Таймер в одну строку с прокруткой */
+  .timer-luxury {
+    gap: 8px;
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding-bottom: 10px;
+  }
+  .timer-block-luxury {
+    min-width: 65px;
+    padding: 10px 8px;
+  }
+  .timer-block-luxury span:first-child {
+    font-size: 1.4rem;
+  }
+  .timer-block-luxury span:last-child {
+    font-size: 0.6rem;
+  }
+  
+  /* Слайдер */
+  .photo-slider-container {
+    width: 95%;
+    height: 50vh;
+    max-height: 450px;
+  }
+  
+  /* Текст истории */
+  .story-card-luxury p {
+    font-size: 1.1rem;
+  }
+  .handwritten-text {
+    font-size: 1.6rem;
+  }
+  .story-card-luxury {
+    padding: 25px;
+  }
+  
   .venue-card-luxury { flex-direction: column; padding: 25px; }
   .envelope-text-luxury { font-size: 0.55rem; white-space: nowrap; }
   .luxury-envelope { width: 280px; height: 200px; }
   .envelope-back-luxury { height: 160px; }
   .envelope-flap-luxury { height: 100px; }
   .envelope-center-text-luxury { font-size: 0.75rem; }
+  .swiper-button-prev, .swiper-button-next { display: none; }
 }
 
 @media (max-width: 480px) {
-  .handwritten-text { font-size: 1rem; }
+  .handwritten-text { font-size: 1.3rem; }
+  .photo-slider-container { height: 45vh; }
+  .story-card-luxury p { font-size: 1rem; }
 }
