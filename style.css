@@ -501,8 +501,8 @@ body {
 }
 
 @media (max-width: 480px) {
-  .handwritten-text { font-size: 1.4rem; }
+  .handwritten-text { font-size: 1.8rem; }
   .photo-slider-container { height: 45vh; }
-  .story-card-luxury p { font-size: 1rem; }
+  .story-card-luxury p { font-size: 1.8rem; }
   .envelope-center-text-luxury { font-size: 1rem; padding: 3px 8px; }
 }
